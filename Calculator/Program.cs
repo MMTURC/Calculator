@@ -16,15 +16,27 @@ Console.WriteLine("Please type a second number: ");
 numberTwo = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Choose what operation you would like!");
-Console.WriteLine("Would you like to add, subtract, multiply and divide");
+Console.WriteLine("Would you like to add, subtract, multiply and divide?");
+
 
 answer = Console.ReadLine();
 
 
-
-switch (answer)
+// ToLower handles if the user does not match the case exactly just the word.
+switch (answer.ToLower())
 {
-
+    case "add":
+        Console.WriteLine($"Your result is {numberOne}  + {numberTwo} = " + (numberOne + numberTwo));
+        break;
+    case "subtract":
+        Console.WriteLine($"Your result is {numberOne} - {numberTwo} = " + (numberOne - numberTwo));
+        break;
+    case "multiply":
+        Console.WriteLine($"Your result is {numberOne} * {numberTwo} = " + (numberOne * numberTwo));
+        break;
+    case "divide":
+        Console.WriteLine($"Your result is {numberOne} / {numberTwo} = " + (numberOne / numberTwo));
+        break;
 }
 
 
