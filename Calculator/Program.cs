@@ -1,4 +1,22 @@
-﻿
+﻿class Program
+{
+    static void Main(string[] args)
+    {
+        bool endApp = false;
+
+        Console.WriteLine("Console Calculator App");
+        Console.WriteLine("-----------------------");
+
+        // While app is running do this
+        while (!endApp)
+        {
+            string? numberInputOne = " "; // handles that there could be a string or null
+            string? numberInputTwo = " ";
+            double result = 0;
+
+        }
+    }
+}
 class Calculator
 {
     public static double DoOperation(double numberOne , double numberTwo, string operation)
