@@ -1,48 +1,34 @@
 ﻿
-Console.WriteLine("This is a calculator\r");
-Console.WriteLine("--------------------\n");
-
-while (true)
+class Calculator
 {
-
-
-    double numberOne = 0;
-
-    double numberTwo = 0;
-
-    string answer;
-
-    Console.WriteLine("Please type a number: ");
-
-    numberOne = Convert.ToDouble(Console.ReadLine());
-
-    Console.WriteLine("Please type a second number: ");
-
-    numberTwo = Convert.ToDouble(Console.ReadLine());
-
-    Console.WriteLine("Choose what operation you would like!");
-    Console.WriteLine("Would you like to add, subtract, multiply and divide?");
-
-
-    answer = Console.ReadLine();
-
-    switch (answer.ToLower())
+    public static double DoOperation(double numberOne , double numberTwo, string operation)
     {
-        case "add":
-            Console.WriteLine($"Your result is {numberOne}  + {numberTwo} = " + (numberOne + numberTwo));
-            break;
-        case "subtract":
-            Console.WriteLine($"Your result is {numberOne} - {numberTwo} = " + (numberOne - numberTwo));
-            break;
-        case "multiply":
-            Console.WriteLine($"Your result is {numberOne} * {numberTwo} = " + (numberOne * numberTwo));
-            break;
-        case "divide":
-            Console.WriteLine($"Your result is {numberOne} / {numberTwo} = " + (numberOne / numberTwo));
-            break;
-    }
-    Console.WriteLine("You can now perform another operation if you would like if not do Ctrl + c on your keyboard (I am too lazy to add something that quits the program)\n");
+        double result = double.NaN;
 
+        switch (operation)
+        {
+            case "add":
+                result = numberOne + numberTwo;
+                break;
+            case "subtract":
+                result = numberOne - numberTwo;
+                break;
+            case "multiply":
+                result = numberOne * numberTwo;
+                break;
+            case "divide":
+                // error handling if the user wants to divide by zero
+                if (numberTwo != 0)
+                {
+                    result = numberOne / numberTwo;
+                }
+                break;
+
+            default:
+                break;
+        }
+        return result;
+    }
 }
 
 
