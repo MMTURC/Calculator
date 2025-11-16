@@ -14,6 +14,30 @@
             string? numberInputTwo = " ";
             double result = 0;
 
+            Console.WriteLine("Type a  number, and then press enter!");
+
+            numberInputOne = Console.ReadLine();
+
+            double cleanNumberOne = 0;
+
+            // Error Handling If the string cannot be parsed to a double 
+            // Will prompt user to type another number in
+            while(!double.TryParse(numberInputOne, out cleanNumberOne))
+            {
+                Console.WriteLine("This is not a valid input, Please enter a numeric value: ");
+                numberInputOne = Console.ReadLine();
+            }
+
+            Console.WriteLine("Please type in a second number: ");
+
+            double clearNumberTwo = 0;
+            while(!double.TryParse(numberInputTwo, out clearNumberTwo)) {
+
+                Console.WriteLine("This is not a valid input, Please enter a numeric value: ");
+                numberInputTwo = Console.ReadLine();
+
+
+
         }
     }
 }
